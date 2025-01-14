@@ -8,22 +8,40 @@
           integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <style>
         .box {
-            width: 500px;
-            height: auto;
-            background-color: gray;
+            width: 80%;
+            height: 80%;
             margin-right: auto;
             margin-left: auto;
+            text-align: center;
+        }
+
+        .pic {
+            width: auto;
+            height: 500px;
+            background-color: gray;
+            position: relative;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
         }
 
 
     </style>
 </head>
 <body>
-<div>
-    <div class="box">
+<div class="box">
+    <div class="pic">
         <img id="img1"
              src="https://images.unsplash.com/photo-1535241556859-780cb9f395f2?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-             width="100%" alt="rabbitA">
+             alt="rabbitA">
     </div>
     <div id="btn" class="btn btn-primary">抽圖片</div>
 </div>
@@ -37,7 +55,7 @@
     urls.push("https://images.unsplash.com/photo-1452857297128-d9c29adba80b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     urls.push("https://images.unsplash.com/photo-1535241749838-299277b6305f?q=80&w=1492&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 
-    //bining event
+    //binding event
     let img1 = document.getElementById('img1');
     let btn = document.getElementById('btn');
 
@@ -47,7 +65,7 @@
     function onD1Click() {
         let index = Math.random() * urls.length; //產生亂數
         index = Math.floor(index);
-        img1.src=urls[index];
+        img1.src = urls[index];
 
     }
 

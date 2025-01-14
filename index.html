@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+        }
+
+        .red {
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue {
+            background-color: blue;
+        }
+
+
+    </style>
+</head>
+<body>
+<div>
+    <div id="box" class="box"></div>
+    <div id="btnR" class="btn btn-primary">R</div>
+    <div id="btnG" class="btn btn-primary">G</div>
+    <div id="btnB" class="btn btn-primary">B</div>
+</div>
+
+
+<script type="text/javascript">
+    let box = document.getElementById('box');
+    let btnR = document.getElementById('btnR');
+    let btnG = document.getElementById('btnG');
+    let btnB = document.getElementById('btnB');
+
+    btnR.addEventListener('click', onD1Click);
+    btnG.addEventListener('click', onD2Click);
+    btnB.addEventListener('click', onD3Click);
+
+    //處理D1事件
+    function onD1Click(){
+        // box.classList.remove('red');
+        // box.classList.remove('green');
+        // box.classList.remove('blue');
+        clearBox();
+        box.classList.add('red');
+    }
+    //處理D2事件
+    function onD2Click(){
+        clearBox();
+        box.classList.add('green');
+    }
+    //處理D3事件
+    function onD3Click(){
+        clearBox();
+        box.classList.add('blue');
+    }
+
+    //reuse
+    function clearBox(){
+        box.classList.remove('red');
+        box.classList.remove('green');
+        box.classList.remove('blue');
+    }
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+</body>
+</html>
